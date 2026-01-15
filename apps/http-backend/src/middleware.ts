@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
-import { JWT_SECRET } from "./config";
+import { JWT_SECRET } from "@repo/backend-common/config";
 import { JwtPayload } from "jsonwebtoken";
 
 interface AuthPayload extends JwtPayload {
