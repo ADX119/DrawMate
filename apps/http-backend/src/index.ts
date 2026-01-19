@@ -3,7 +3,7 @@ import * as jwt from "jsonwebtoken";
 import { JWT_SECRET } from "@repo/backend-common/config";
 
 import { middleware } from "./middleware";
-import { CreateUserSchema } from "@repo/common/types";
+import { CreateUserSchema, CreateRoomSchema } from "@repo/common/types";
 
 
 
@@ -35,6 +35,15 @@ app.post("/signin", (req: Request, res: Response) => {
 });
 
 app.post("/room", middleware, (req: Request, res: Response) => {
+
+  const data = CreateRoomSchema.safeParse(req.body);
+
+  if (!data.success) {
+    res.json({
+      message: "invalid data",
+    });
+    return;
+  }
   res.json();
 });
 
