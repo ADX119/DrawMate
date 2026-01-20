@@ -27,6 +27,8 @@ app.post("/signin", (req: Request, res: Response) => {
   const token = jwt.sign(
     {
       user_id,
+
+
     },
     JWT_SECRET
   ) as string;
