@@ -50,5 +50,5 @@ app.post("/room", middleware, (req: Request, res: Response) => {
 });
 
 app.listen(8080, () => {
-  console.log("HTTP Backend is running on http://localhost:8080");
+  console.log("HTTP Backend is running");
 });
